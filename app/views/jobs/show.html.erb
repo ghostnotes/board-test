@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @job.category %>
+</p>
+
+<p>
+  <strong>Headquarters:</strong>
+  <%= @job.headquarters %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+
+<p>
+  <strong>How to apply:</strong>
+  <%= @job.how_to_apply %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @job.company_name %>
+</p>
+
+<p>
+  <strong>Company email:</strong>
+  <%= @job.company_email %>
+</p>
+
+<p>
+  <strong>Company url:</strong>
+  <%= @job.company_url %>
+</p>
+
+<p>
+  <strong>Company logo url:</strong>
+  <%= @job.company_logo_url %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
