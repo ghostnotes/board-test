@@ -32,8 +32,17 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'haml-rails'
+gem 'erb2haml'
+
+gem 'bootstrap3-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test do
+  gem 'rspec-rails'
+end

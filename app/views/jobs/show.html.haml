@@ -1,0 +1,46 @@
+-#%p#notice= notice
+.row
+  .col-lg-12
+    %h2
+      = @job.title
+    %p
+      %strong POSTED:
+      = @job.created_at.strftime('%Y-%m-%d')
+
+    %dl.dl-horizontal
+      %dt Headquarters:
+      %dd
+        = @job.headquarters
+      %dt Workplace:
+      %dd
+        = @job.workplace
+      %dt Description:
+      %dd
+        = @job.description
+      %dt How to apply:
+      %dd
+        =@job.how_to_apply
+      %dt Company name:
+      %dd
+        =@job.company_name
+      %dt Company email:
+      %dd
+        =@job.company_email
+      %dt Company url:
+      %dd
+        =@job.company_url
+      %dt Company logo url:
+      %dd
+        =@job.company_logo_url
+
+    %a.btn.btn-primary.btn-sm(href= jobs_path style='color: white;')
+      Back
+-#
+  %p
+    %strong Category:
+    = @job.category
+  = link_to 'Edit', edit_job_path(@job)
+  |
+  \#{link_to 'Back', jobs_path}
+
+

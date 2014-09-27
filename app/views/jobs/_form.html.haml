@@ -1,0 +1,51 @@
+= form_for(@job) do |f|
+  - if @job.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@job.errors.count, "error")
+        prohibited this job from being saved:
+      %ul
+        - @job.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :category
+    %br/
+    = f.number_field :category
+  .field
+    = f.label :headquarters
+    %br/
+    = f.text_field :headquarters
+  .field
+    = f.label :workplace
+    %br/
+    = f.text_field :workplace
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .field
+    = f.label :how_to_apply
+    %br/
+    = f.text_area :how_to_apply
+  .field
+    = f.label :company_name
+    %br/
+    = f.text_field :company_name
+  .field
+    = f.label :company_email
+    %br/
+    = f.text_field :company_email
+  .field
+    = f.label :company_url
+    %br/
+    = f.text_field :company_url
+  .field
+    = f.label :company_logo_url
+    %br/
+    = f.text_field :company_logo_url
+  .actions
+    = f.submit

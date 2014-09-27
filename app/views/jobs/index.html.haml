@@ -1,0 +1,71 @@
+-#
+  %h1 [Board Alpha] Listing jobs
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Category
+        %th Headquarters
+        %th Description
+        %th How to apply
+        %th Company name
+        %th Company email
+        %th Company url
+        %th Company logo url
+        %th
+        %th
+        %th
+    %tbody
+      - @jobs.each do |job|
+        %tr
+          %td= job.title
+          %td= job.category
+          %td= job.headquarters
+          %td= job.description
+          %td= job.how_to_apply
+          %td= job.company_name
+          %td= job.company_email
+          %td= job.company_url
+          %td= job.company_logo_url
+          %td= link_to 'Show', job
+          %td= link_to 'Edit', edit_job_path(job)
+          %td= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = link_to 'New Job', new_job_path
+%br
+%br
+.row
+  .col-md-12
+    %a.btn.btn-sm.btn-primary.pull-right(href= new_job_path style='color: white;')
+      Post a job: $200 for 30 days
+.row
+  .col-md-6
+    %h2
+      in-house development
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Job title
+          %th Company
+          %th Posted
+      %tbody(id='job_table_1')
+        - @jobs.each do |job|
+          %tr(job_id='#{job.id}')
+            %td= job.title
+            %td= job.company_name
+            %td= job.created_at.strftime('%b-%d, %Y')
+  .col-md-6
+    %h2
+      entrusted development
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Job title
+          %th Company
+          %th Posted
+      %tbody(id='job_table_2')
+        - @jobs.each do |job|
+          %tr(job_id='#{job.id}')
+            %td= job.title
+            %td= job.company_name
+            %td= job.created_at.strftime('%b-%d, %Y')
