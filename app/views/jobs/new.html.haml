@@ -1,3 +1,7 @@
-%h1 New job
-= render 'form'
-= link_to 'Back', jobs_path
+%br
+= link_to 'Back', jobs_path, class: 'btn btn-danger btn-sm'
+%h1 Create your job
+.container
+  .span12
+    = render 'form'
+
