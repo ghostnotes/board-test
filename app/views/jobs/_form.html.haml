@@ -13,8 +13,7 @@
     = f.text_field :title, class: 'form-control'
   .form-group
     = f.label :category, for: 'category'
-    -#= f.select :category, Job::categories, class: 'form-control'
-    = f.select :category, [:in_house, :entrusted], class: 'form-control'
+    = f.select :category, options_for_select(Job.categories.keys), {}, class:'form-control'
   .form-group
     = f.label :headquarters, for: 'headquarters'
     = f.text_field :headquarters, class: 'form-control'
@@ -39,5 +38,5 @@
   .form-group
     = f.label :company_logo_url, for: 'company_logo_url'
     = f.text_field :company_logo_url, class: 'form-control'
-  .actions.pull-right
-    = f.submit :submit, class: 'btn btn-default'
+  .actions
+    = f.submit :submit, class: 'btn btn-default btn-block'
